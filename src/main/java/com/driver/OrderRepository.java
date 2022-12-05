@@ -119,17 +119,17 @@ public class OrderRepository {
     }
 
     public void deletePartnerById(String partnerId) {
-        List<String> list=new LinkedList<>();
+//        List<String> list=new LinkedList<>();
         for (DeliveryPartner dp:deliveryPartnerInDB.keySet()){
             if (Objects.equals(dp.getId(),partnerId)){
-                list=deliveryPartnerInDB.get(dp);
+//                list=deliveryPartnerInDB.get(dp);
                 deliveryPartnerInDB.remove(dp);
                 break;
             }
         }
-        for (String order:list){
-            orderInDB.remove(order);
-        }
+//        for (String order:list){
+//            orderInDB.remove(order);
+//        }
     }
 
     public void deleteOrderById(String orderId) {
