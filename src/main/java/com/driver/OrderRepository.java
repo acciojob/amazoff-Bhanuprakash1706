@@ -138,6 +138,7 @@ public class OrderRepository {
         for (DeliveryPartner dp:deliveryPartnerInDB.keySet()){
             LinkedList<String> orderList=deliveryPartnerInDB.get(dp);
             if (orderList.remove(orderId)){
+                dp.setNumberOfOrders(dp.getNumberOfOrders()-1);
                 deliveryPartnerInDB.put(dp,orderList);
                 return;
             }
